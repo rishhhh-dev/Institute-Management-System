@@ -1,0 +1,34 @@
+{% load static %}
+  <!-- Sidebar section starts -->
+  <div class="sidebar border-end" style="height:175%;">
+      <div class="sidebar-header border-bottom">
+        <div class="sidebar-brand">
+          <img src="{% static 'img/bestit-logo.png' %}" width="70%">
+        </div>
+      </div>
+      <ul class="sidebar-nav">
+        <li class="nav-title">Useful Links</li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'dashboard' %}" id="dash_link">
+            <!-- <i class="nav-icon cil-speedometer"></i>  -->
+            <i class="bi bi-speedometer"></i> <span class="ml-3">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'all-students' %}" id="student_link">
+            <!-- <i class="nav-icon cil-speedometer"></i> Students -->
+            <i class="bi bi-people"></i> <span class="ml-3">Students</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'all-courses' %}" id="course_link">
+            <!-- <i class="nav-icon cil-speedometer"></i> Students -->
+            <i class="bi bi-book"></i> <span class="ml-3">Courses</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer border-top d-flex">
+        <button class="bi bi-door-open px-3 rounded-4" type="button" id="logout_btn">Logout</button>
+      </div>
+    </div>
+  <!-- Sidebar section ends -->

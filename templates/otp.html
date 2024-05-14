@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User Verification
+{% endblock %}
+
+{% block body %}
+    {% include 'messages.html' %}
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="container">
+            <div class="card shadow mt-5 ">
+                <div class="card-body">
+                    <h6 class="card-title text-center">Enter the OTP sent to your email address </h6>
+                    <div class="row">
+                        <div class="d-flex align-items-center justify-content-center mt-4">
+                            <input type="text" id="digit-1" class="otp_digits" name="digit1" minlength="1" maxlength="1" required>
+                            <input type="text" id="digit-2" class="otp_digits" name="digit2" minlength="1" maxlength="1" required>
+                            <input type="text" id="digit-3" class="otp_digits" name="digit3" minlength="1" maxlength="1" required>
+                            <input type="text" id="digit-4" class="otp_digits" name="digit4" minlength="1" maxlength="1" required>
+                            <input type="text" id="digit-5" class="otp_digits" name="digit5" minlength="1" maxlength="1" required>
+                            <input type="text" id="digit-6" class="otp_digits" name="digit6" minlength="1" maxlength="1" required>
+                        </div>
+                    </div>
+                    <div class="submit-otp d-flex align-items-center justify-content-center mt-3">
+                        <input type="submit" class="btn-success px-4 rounded-pill mt-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $(document).ready(function(){
+            console.log("otp page");
+        })
+    </script>
+{%endblock%}

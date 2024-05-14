@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Edit Course
+{%endblock%}
+
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            {% include 'sidebar.html' %}
+        </div>
+        <div class="col-10">
+            <div class="mx-2 bg-light w-100 px-2">
+                <h3>Edit Course</h3>
+                {% include 'messages.html' %}
+                <div class="course-edit-form d-flex align-items-start justify-content-center">
+                    <form method="post">
+                        {% csrf_token %}
+                            <div class="courses_name_div">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="course_name">Course Name: </label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" name="course_name" id="course_name" value="{{data.name}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course_price_div">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="course_price">Course Price: </label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="number" class="form-control" name="course_price" id="course_price" placeholder="Enter the course price" value="{{data.price}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course_duration_div">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="course_duration">Course Duration: </label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="number" class="form-control" name="course_duration" id="course_duration" placeholder="Enter the course duration in number" value="{{data.duration}}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-center mt-5">
+                                <button type="submit" class="btn btn-success rounded-pill">Edit Course</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+{% block js %}
+
+{%endblock%}
